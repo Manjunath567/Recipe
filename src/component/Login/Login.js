@@ -49,33 +49,40 @@ class Login extends Component {
         return (
 
             <main className="login">
-            { console.log(this.props) }
-                <h2 className="login_header">Login</h2>
-                <input
-                    className="login-input"
-                    placeholder="Username"
-                    type="text"
-                    autoFocus
-                    value={this.state.username}
-                    onChange={(e) => this.change(e, 'username')}
-                    onKeyPress={this.onEnterPress}
-                />
-                <input
-                    className="login-input"
-                    placeholder="Password"
-                    type="password"
-                    value={this.state.password}
-                    onChange={(e) => this.change(e, 'password')}
-                    onKeyPress={this.onEnterPress}
-                />
-                <div className="login_error">{ this.state.isError }</div>
-                <button className="login_btn" type="button" onClick={(e) => this.submit(e)}>Login</button>
-                <div>
+            <div class="container">
+                <section id="content">
+                    <form action="">
+                        <h1>Login Form</h1>
+                        <div>
+                            <input type="text" placeholder="Username" required="" id="username"
+                            autoFocus
+                            value={this.state.username}
+                            onChange={(e) => this.change(e, 'username')}
+                            onKeyPress={this.onEnterPress}
+                             />
+                        </div>
+                        <div>
+                            <input type="password" placeholder="Password" required="" id="password"
+                            value={this.state.password}
+                            onChange={(e) => this.change(e, 'password')}
+                            onKeyPress={this.onEnterPress}
+
+                            />
+                        </div>
+                        <div className="login_error">{ this.state.isError }</div>
+                        <div>
+                            <button className="form_butt" type="button" onClick={(e) => this.submit(e)} value="Log in">Log in</button>
+                            </div>
+                            <div className="forgot_pass">
                     <ul className="register">
-                        <li><Link to="/forgot">Forgot Password</Link>|</li>
+                        <li><Link to="/forgot">Forgot Password</Link></li>
                         <li><Link to="/register">Register</Link></li>
                     </ul>
-                 </div>
+                        </div>
+                    </form>
+
+                </section>
+            </div>
             </main>
         );
     }
